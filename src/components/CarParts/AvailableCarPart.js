@@ -37,6 +37,7 @@ const AvailableCarPart = () => {
   const carPartsList = DUMMY_CarParts.map((carPart) => (
     <CarPartItem
       key={carPart.key}
+      id = {carPart.id}
       name={carPart.name}
       description={carPart.description}
       price={carPart.price}
