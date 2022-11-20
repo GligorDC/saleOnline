@@ -1,0 +1,48 @@
+API - application programing interface'
+rest - 
+GET
+-----------------------------------
+const [isLoading, setISLoading] = useState(false);
+const [error, setError] = useState(null);
+const fetchMovieHandler = useCallBack(async() => {
+setISLoading(true);
+try {
+ const response = await fetch('API');
+ if(!response.ok) {
+    throw new Error('error message')
+}
+ const data = await response.json();
+
+ const transformedMovies = data.results.map((movieData) => {
+     return {
+         id: movieData.id,
+         title: movieData.title
+     };
+ });
+ setMovies(transformedMovies)
+ }
+ catch(error){
+     setError(error.message);
+ }
+    //default is get method;
+    //fetch return a promise;
+ setISLoading(false);
+}, []);
+useEfect(()=>{
+    fetchMovieHandler();
+},[fetchMovieHandler])
+-------------------------------------------------------------
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25599822#overview
+for add firebase
+
+function addMovieHandler(movie) {
+    fetch('URL',{
+        method: 'POST',
+        body: JSON.stringify(movie),
+        headers: {
+            'Content-Type': 'application/json' //not required everytime
+        }
+     });
+const data = await response.json();
+console.log(data);
+}

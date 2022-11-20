@@ -1,0 +1,11 @@
+Custom Hooks -
+just rejular functions, but are function that can contains fuctions stateful logic;
+can use other hooks;
+name convention: use+name
+with costume hooks we don t share state or information accros component;
+setTask maked with useState is garanted not change!!!!
+createTask.bind(null,)
+//createTask is a function
+//bind -----> https://academind.com/tutorials/function-bind-event-execution
+https://github.com/academind/react-complete-guide-code/tree/15-building-custom-react-hooks
+// here you can see the costum hook with a powerfull example: https://github.com/academind/react-complete-guide-code/tree/15-building-custom-react-hooks/code/07-using-the-hook-in-more-cmp
